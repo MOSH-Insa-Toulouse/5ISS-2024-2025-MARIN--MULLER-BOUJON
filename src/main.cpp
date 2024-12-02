@@ -1,32 +1,30 @@
 #include <Arduino.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include <HardwareSerial.h>
 
-#define SCREEN_WIDTH 128 
-#define SCREEN_HEIGHT 64 
-#define SSD1306_ADDR 0x3C
-
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+HardwareSerial mySerial(0); // Use UART0 (RX0, TX0)
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(115200); // Initialize Serial Monitor
+  mySerial.begin(57600); // Initialize RN2483A Serial communication
 
-  if(!display.begin(SSD1306_SWITCHCAPVCC, SSD1306_ADDR)) {
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;);
+  Serial.println("Testing RN2483A module...");
+
+  // Send a command to the RN2483A module
+  mySerial.println("sys get ver");
+
+  // Wait for a response
+  delay(1000);
+
+  // Read the response from the RN2483A module
+  while (mySerial.available()) {
+    String response = mySerial.readString();
+    Serial.println("RN2483A Response: " + response);
   }
-  delay(2000);
-  display.clearDisplay();
-
-  display.setTextSize(1);
-  display.setTextColor(WHITE);
-  display.setCursor(0, 10);
-  // Display static text
-  display.println("Hello, world!");
-  display.display(); 
 }
 
 void loop() {
-  
+  // Idle loop
+  mySerial.begin(115200);
+  Serial.println("Idle...");
+  delay(1000);
 }
