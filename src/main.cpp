@@ -4,6 +4,8 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
+#include "sensor.hpp"
+
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 
@@ -12,6 +14,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 // RN2483Serial using RX2 and TX2
 HardwareSerial RN2483Serial(2);
+
+Sensor gaz_sensor;
 
 void printSSD1306(String text) {
   display.clearDisplay();
@@ -92,6 +96,7 @@ void setup() {
 
   // Initialize RN2483A Serial communication
   RN2483Serial.begin(57600);
+  Serial.begin(115200);
 
   // Initialize SSD1306
   Init_SSD1306();
@@ -99,6 +104,8 @@ void setup() {
 
 void loop() {
   test_RN2483A();
+  Serial.print("Value from sensor: ");
+  Serial.println(gaz_sensor.get_value());
   delay(1000);
 
   // Test communication to gateway
