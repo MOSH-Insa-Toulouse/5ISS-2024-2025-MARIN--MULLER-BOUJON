@@ -58,7 +58,7 @@ void test_RN2483A() {
   }
 }
 
-void sendToGateway() {
+void initGateway() {
   String devEUI = "9a0698b4e20d4d2f";
   String joinEUI = "53760ec38137bbf8";
   String appKey = "4f30040e6b6f1a4f6a0ed332fc6f7ae7";
@@ -69,27 +69,39 @@ void sendToGateway() {
   delay(100);
   RN2483Serial.println("mac set appkey " + appKey);
   delay(100);
+  RN2483Serial.println("mac set pwridx 5");
+  delay(100);
   RN2483Serial.println("mac join otaa");
   
   delay(5000);
 
-  // Check if join was successful
   if (RN2483Serial.available()) {
     String response = RN2483Serial.readString();
     Serial.println("Join Response: " + response);
     printSSD1306("Join: " + response);
-  }
 
+    if (response.indexOf("accepted") >= 0) {
+      Serial.println("Join accepted");
+      printSSD1306("Join accepted");
+    } else {
+      Serial.println("Join failed");
+      printSSD1306("Join failed");
+    }
+  }
+}
+
+void sendToGateway() {
   // Send Hello : 48656c6c6f in hex
   RN2483Serial.println("mac tx uncnf 1 48656c6c6f");
   delay(1000);
 
   while (RN2483Serial.available()) {
-    String response = RN2483Serial.readString();
-    Serial.println("TX Response: " + response);
-    printSSD1306("TX Response: " + response);
+    String txResponse = RN2483Serial.readString();
+    Serial.println("TX Response: " + txResponse);
+    printSSD1306("TX Response: " + txResponse);
   }
 }
+
 
 void setup() {
   Serial.begin(115200);
@@ -100,15 +112,16 @@ void setup() {
 
   // Initialize SSD1306
   Init_SSD1306();
+  delay(5000);
+  initGateway();
 }
 
 void loop() {
-  test_RN2483A();
-  Serial.print("Value from sensor: ");
-  Serial.println(gaz_sensor.get_value());
-  delay(1000);
+  // test_RN2483A();
+  // Serial.print("Value from sensor: ");
+  // Serial.println(gaz_sensor.get_value());
+  // delay(1000);
 
   // Test communication to gateway
   sendToGateway();
-  delay(10000); // Wait before sending again
 }
