@@ -105,7 +105,7 @@ void setup() {
 void loop() {
   test_RN2483A();
   Serial.print("Value from sensor: ");
-  Serial.println(gaz_sensor.get_value());
+  Serial.println(gaz_sensor.get_analog());
   delay(1000);
 
   // Test communication to gateway
