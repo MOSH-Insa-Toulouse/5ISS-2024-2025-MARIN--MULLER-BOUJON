@@ -33,7 +33,6 @@ void Init_SSD1306() {
   display.setTextColor(SSD1306_WHITE); // Draw white text
   display.setCursor(0, 0); // Start at top-left corner
 
-
   display.println("SSD1306 Oled Initialized!");
   display.display();
   delay(1000);
@@ -50,25 +49,59 @@ void test_RN2483A() {
   while (RN2483Serial.available()) {
     String response = RN2483Serial.readString();
     printSSD1306("RN2483A Response:");
+    Serial.println(response);
     printSSD1306(response);
   }
 }
 
+void sendToGateway() {
+  String devEUI = "9a0698b4e20d4d2f";
+  String joinEUI = "53760ec38137bbf8";
+  String appKey = "4f30040e6b6f1a4f6a0ed332fc6f7ae7";
+
+  RN2483Serial.println("mac set deveui " + devEUI);
+  delay(100);
+  RN2483Serial.println("mac set appeui " + joinEUI);
+  delay(100);
+  RN2483Serial.println("mac set appkey " + appKey);
+  delay(100);
+  RN2483Serial.println("mac join otaa");
+  
+  delay(5000);
+
+  // Check if join was successful
+  if (RN2483Serial.available()) {
+    String response = RN2483Serial.readString();
+    Serial.println("Join Response: " + response);
+    printSSD1306("Join: " + response);
+  }
+
+  // Send Hello : 48656c6c6f in hex
+  RN2483Serial.println("mac tx uncnf 1 48656c6c6f");
+  delay(1000);
+
+  while (RN2483Serial.available()) {
+    String response = RN2483Serial.readString();
+    Serial.println("TX Response: " + response);
+    printSSD1306("TX Response: " + response);
+  }
+}
 
 void setup() {
+  Serial.begin(115200);
+
   // Initialize RN2483A Serial communication
   RN2483Serial.begin(57600);
 
   // Initialize SSD1306
   Init_SSD1306();
-
 }
 
 void loop() {
   test_RN2483A();
   delay(1000);
+
+  // Test communication to gateway
+  sendToGateway();
+  delay(10000); // Wait before sending again
 }
-
-
-
-
