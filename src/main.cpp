@@ -113,7 +113,12 @@ void setup() {
   // Initialize SSD1306
   Init_SSD1306();
   delay(5000);
+
+  // Initialize Gateway from LoRa
   initGateway();
+
+  // Initialize Sensor
+  gaz_sensor.init(SENSOR_PIN);
 }
 
 void loop() {
