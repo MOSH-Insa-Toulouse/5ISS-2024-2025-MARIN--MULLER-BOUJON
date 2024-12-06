@@ -23,3 +23,10 @@ Ampli LT1050 très faible offset :
 ![image](https://github.com/user-attachments/assets/fc479fac-d6a4-454c-bda5-96964039b8b9)
 
 
+Schéma ampli + filtres (en bleu) :
+
+![image](https://github.com/user-attachments/assets/6c6dc274-dd44-4bc7-9d2a-37a7cb128c63)
+
+
+
+
