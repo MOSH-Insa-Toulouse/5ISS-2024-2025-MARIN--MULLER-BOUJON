@@ -70,6 +70,13 @@ Bruit 50Hz non atténué :
 ![image](https://github.com/user-attachments/assets/d9d5dcb4-6dd2-47ee-af71-6a9b266228d3)
 
 
+## Calcul de la résistance totale du schéma :
+
+On est a basse fréquence donc les capacités sont analogues à des circuits ouverts, on a alors une succéssion de ponts diviseurs :
+
+
+Rsortie = (1+R3/R)*R1*Vcc/Vadc - R1 - R5
+
 
 
 
