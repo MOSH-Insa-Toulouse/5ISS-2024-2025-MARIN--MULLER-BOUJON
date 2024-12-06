@@ -28,5 +28,24 @@ Schéma ampli + filtres (en bleu) :
 ![image](https://github.com/user-attachments/assets/6c6dc274-dd44-4bc7-9d2a-37a7cb128c63)
 
 
+Fréquence de coupure du premier filtre : 16Hz
+
+![image](https://github.com/user-attachments/assets/8086cfb8-f343-4d78-b7ed-4f89b6e671b0)
+
+Fréquence de coupure du deuxième filtre : 1.5Hz
+
+![image](https://github.com/user-attachments/assets/a6863864-15cf-415b-9773-68faa4495e76)
+
+
+Fréquenc de coupure du troisième filtre : 1.6kHz
+
+![image](https://github.com/user-attachments/assets/4009a6fe-1778-4e93-a6b8-1c2830185bf3)
+
+
+ 
+Atténuation à :
+- 50Hz : 40db
+- Fréquence de Shannon Nyquist (2fmax adc) : 108dB 
+
 
 
