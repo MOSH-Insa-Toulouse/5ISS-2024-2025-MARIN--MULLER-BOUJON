@@ -45,7 +45,7 @@ Fréquenc de coupure du troisième filtre : 1.6kHz
  
 Atténuation à :
 - 50Hz : 40db
-- Fréquence de Shannon Nyquist (2fmax adc) : 108dB 
+- Fréquence de Shannon Nyquist (2fmax adc 15kHz) : 108dB 
 
 
 
