@@ -54,8 +54,23 @@ V = RI <=> I = 1/R V <=> I = V * G (Conductance en Siemens)
 Modèle du capteur de gaz : I=V(cp,cn)*(10n+(v(gc,gn)*10n))
 
 t=0: V(cp,cn)=0 I=V(cp,cn)*(10nS)
+
 Si t>>1: V(gc,gn)=1 I=V(cp,cn)*(10nS+10mS)
+
 tau=R0*C0
+
+
+Buit 50Hz atténué :
+
+![image](https://github.com/user-attachments/assets/47ac8214-5803-498e-826d-89604c378637)
+
+
+Bruit 50Hz non atténué :
+
+![image](https://github.com/user-attachments/assets/d9d5dcb4-6dd2-47ee-af71-6a9b266228d3)
+
+
+
 
 
 
