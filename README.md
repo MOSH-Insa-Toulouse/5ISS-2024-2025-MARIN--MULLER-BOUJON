@@ -45,7 +45,22 @@ Fréquenc de coupure du troisième filtre : 1.6kHz
  
 Atténuation à :
 - 50Hz : 40db
-- Fréquence de Shannon Nyquist (2fmax adc 15kHz) : 108dB 
+- Fréquence de Shannon Nyquist (2fmax adc 15kHz) : 108dB
+
+## Simulation avec modèle du capteur de gaz 
+
+V = RI <=> I = 1/R V <=> I = V * G (Conductance en Siemens)
+
+Modèle du capteur de gaz : I=V(cp,cn)*(10n+(v(gc,gn)*10n))
+
+t=0: V(cp,cn)=0 I=V(cp,cn)*(10nS)
+Si t>>1: V(gc,gn)=1 I=V(cp,cn)*(10nS+10mS)
+tau=R0*C0
+
+
+
+
+
 
 
 
