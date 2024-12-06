@@ -13,7 +13,7 @@ En amplifiant on amplifie aussie le buit ! Il faut donc filtrer :
 2. Fitlrer le bruit 50Hz
 3. Filtrer l'échantillonnage de l'ADC
 
-Ampli avec gros offset :
+Ampli normal avec gros offset :
 
 ![image](https://github.com/user-attachments/assets/a544955b-39e8-4ca0-a5ec-7836f8691a66)
 
