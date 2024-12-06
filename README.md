@@ -80,7 +80,7 @@ Rsortie = (1+R3/R)*R1*Vcc/Vadc - R1 - R5
 
 
 
-
+On peut brancher un potentiomètre numérique pour faire varier l'amplification et éviter de saturer dynamiquement.
 
 
 
