@@ -1,0 +1,5 @@
+# LTSpice temp files
+*.log
+*.raw
+*.fft
+*.net
