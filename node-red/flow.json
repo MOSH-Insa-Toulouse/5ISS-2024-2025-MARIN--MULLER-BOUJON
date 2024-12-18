@@ -1,0 +1,386 @@
+[
+    {
+        "id": "198746f833af26ca",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2909ad4e1ca13619",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "ca_certificate.txt",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "211ac90c1df2c2b0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "https://srv-chirpstack.insa-toulouse.fr",
+        "port": "1883",
+        "tls": "2909ad4e1ca13619",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "baca35e28f5a3a27",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "ca_certificate.txt",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "3c830ca801586f46",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "https://srv-chirpstack.insa-toulouse.fr",
+        "port": "1883",
+        "tls": "baca35e28f5a3a27",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "881d3a97f0da2921",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "79e7db5ae12aebf7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "0fdd5634e9de1dda",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "881d3a97f0da2921",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5833c1785f0d5c12",
+        "type": "inject",
+        "z": "198746f833af26ca",
+        "name": "Toto timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "toto",
+        "payload": "Hello, world!",
+        "payloadType": "str",
+        "x": 860,
+        "y": 160,
+        "wires": [
+            [
+                "cfba9dafbd28ba79"
+            ]
+        ]
+    },
+    {
+        "id": "cfba9dafbd28ba79",
+        "type": "mqtt out",
+        "z": "198746f833af26ca",
+        "name": "",
+        "topic": "toto",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c830ca801586f46",
+        "x": 1070,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "644016f53bdf47c7",
+        "type": "mqtt in",
+        "z": "198746f833af26ca",
+        "name": "",
+        "topic": "application/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "211ac90c1df2c2b0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "3ff32dd465806d53",
+                "0bb22bbd9f9a0494"
+            ]
+        ]
+    },
+    {
+        "id": "3039f2dccf8eac69",
+        "type": "inject",
+        "z": "198746f833af26ca",
+        "name": "test json",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{     \"deduplicationId\": \"92c5b809-f12b-46fa-88dd-d85fe4ad4f38\",     \"time\": \"2024-12-18T09:25:36.074032144+00:00\",     \"deviceInfo\": {         \"tenantId\": \"e8af5182-7381-4cd4-8087-b2a2ebfd6689\",         \"tenantName\": \"GEI\",         \"applicationId\": \"569d064a-3653-4612-b198-e1461f4d799e\",         \"applicationName\": \"Gaz-app-choCapor\",         \"deviceProfileId\": \"72a798ee-b91f-4c6a-b64d-7c03cb97560c\",         \"deviceProfileName\": \"Arduino Uno\",         \"deviceName\": \"Gaz-app-choCapor-device\",         \"devEui\": \"0004a30b002159ca\",         \"deviceClassEnabled\": \"CLASS_A\",         \"tags\": {}     },     \"devAddr\": \"016c1389\",     \"adr\": false,     \"dr\": 5,     \"fCnt\": 78,     \"fPort\": 1,     \"confirmed\": false,     \"data\": \"AVM=\",     \"rxInfo\": [         {             \"gatewayId\": \"dca632fffe33a26e\",             \"uplinkId\": 13110332,             \"rssi\": -97,             \"snr\": 2.75,             \"channel\": 5,             \"location\": {},             \"context\": \"FmtLlA==\",             \"metadata\": {                 \"region_common_name\": \"EU868\",                 \"region_config_id\": \"eu868\"             },             \"crcStatus\": \"CRC_OK\"         },         {             \"gatewayId\": \"dca632fffe33a26e\",             \"uplinkId\": 64235,             \"time\": \"2024-12-18T09:25:36.074032144+00:00\",             \"rssi\": -97,             \"snr\": 2.75,             \"channel\": 5,             \"location\": {},             \"context\": \"FmtLlA==\",             \"metadata\": {                 \"region_config_id\": \"eu868\",                 \"region_common_name\": \"EU868\"             },             \"crcStatus\": \"CRC_OK\"         }     ],     \"txInfo\": {         \"frequency\": 867500000,         \"modulation\": {             \"lora\": {                 \"bandwidth\": 125000,                 \"spreadingFactor\": 7,                 \"codeRate\": \"CR_4_5\"             }         }     } }",
+        "payloadType": "str",
+        "x": 680,
+        "y": 300,
+        "wires": [
+            [
+                "620666627d616776"
+            ]
+        ]
+    },
+    {
+        "id": "620666627d616776",
+        "type": "json",
+        "z": "198746f833af26ca",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 830,
+        "y": 300,
+        "wires": [
+            [
+                "3ff32dd465806d53"
+            ]
+        ]
+    },
+    {
+        "id": "3ff32dd465806d53",
+        "type": "function",
+        "z": "198746f833af26ca",
+        "name": "Format",
+        "func": "let name = msg.payload.deviceInfo.deviceName;\nlet id = msg.payload.deviceInfo.applicationId;\nlet data = msg.payload.data;\n\n\nif (msg.payload) {\n    msg.payload = \"Device: '\" + name + \"'@\" + id + \":\\n\";\n    msg.payload += \"Data: [\" + data + \"]\\n\";\n    \n} else {\n    msg.payload = \"Error: msg.payload is undefined.\\n\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 300,
+        "wires": [
+            [
+                "0b2c17bfa1f54b25"
+            ]
+        ]
+    },
+    {
+        "id": "0b2c17bfa1f54b25",
+        "type": "ui_text",
+        "z": "198746f833af26ca",
+        "group": "0fdd5634e9de1dda",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1150,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0bb22bbd9f9a0494",
+        "type": "debug",
+        "z": "198746f833af26ca",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 240,
+        "wires": []
+    }
+]
