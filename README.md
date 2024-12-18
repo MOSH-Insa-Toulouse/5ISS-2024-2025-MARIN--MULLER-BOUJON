@@ -1,88 +1,31 @@
+# UF Smart Devices
 
-Response from "sys get ver" command :
-RN2483 1.0.5 Oct 31 2018 15:06:52
+## Embedded
 
-DO NOT FORGET TO RESET THE RN2483 BY PULLING THE RST PIN !
+![banner](img/software-banner.jpg)
 
-# UF Smart Devices : Partie Analogique
+[Full Software design here](hardware)
 
-Impédence du capteur de gaz : plusieurs gigaohms -> il faut donc amplifier le signal.
+We made a breadboard using various components like a *LoRa UART* [RN2483A](https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/RN2483-Low-Power-Long-Range-LoRa-Technology-Transceiver-Module-DS50002346F.pdf), an [SSD1306](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf) I2C Screen and a [Gaz Sensor MQ5](https://wiki.seeedstudio.com/Grove-Gas_Sensor-MQ5/) from Seeed Studio. The goal would be to communicate using the LoRa chip to [ChirpStack](https://www.chirpstack.io/) by sending the sensor data directly to the gateway. We decided to use an ESP32 for this project, because it has a wide variety of pins that can be dynamic allocated on each gpio. Plus, espidf is a framework we are familiar with.
 
-En amplifiant on amplifie aussie le bruit ! Il faut donc filtrer :
-1. Filtrer le bruit hf de mesure
-2. Fitlrer le bruit 50Hz
-3. Filtrer l'échantillonnage de l'ADC
+## Hardware
 
-Ampli normal avec gros offset :
+![banner](img/hardware-banner.jpg)
 
-![image](https://github.com/user-attachments/assets/a544955b-39e8-4ca0-a5ec-7836f8691a66)
+[Full LTSpice simulation and EasyEDA design here](hardware)
 
+The goal in this part would be to create a fully working PCB with everything we designed so far. Our own gaz sensor will be used. The first step would be to emulate on **LTSpice** the behavior of such a sensor. With this we can then design a board with the correct schematic on **EasyEDA**.
 
-Ampli LT1050 très faible offset :
+## Node Red
 
-![image](https://github.com/user-attachments/assets/fc479fac-d6a4-454c-bda5-96964039b8b9)
+![banner](img/nodered-banner.jpg)
 
+[Full Node-Red setup here](node-red)
 
-Schéma ampli + filtres (en bleu) :
+We would need to create a node-red flow to actually gather the data and show it on a dashboard. To do this we would have to connect using a MQTT Broker, Chirpstack has the ability to resend, via a given topic the data gathered by the device.
 
-![image](https://github.com/user-attachments/assets/6c6dc274-dd44-4bc7-9d2a-37a7cb128c63)
+## App Inventor
 
+![banner](img/appinventor-banner.jpg)
 
-Fréquence de coupure du premier filtre : 16Hz
-
-![image](https://github.com/user-attachments/assets/8086cfb8-f343-4d78-b7ed-4f89b6e671b0)
-
-Fréquence de coupure du deuxième filtre : 1.5Hz
-
-![image](https://github.com/user-attachments/assets/a6863864-15cf-415b-9773-68faa4495e76)
-
-
-Fréquenc de coupure du troisième filtre : 1.6kHz
-
-![image](https://github.com/user-attachments/assets/4009a6fe-1778-4e93-a6b8-1c2830185bf3)
-
-
- 
-Atténuation à :
-- 50Hz : 40db
-- Fréquence de Shannon Nyquist (2fmax adc 15kHz) : 108dB
-
-## Simulation avec modèle du capteur de gaz 
-
-V = RI <=> I = 1/R V <=> I = V * G (Conductance en Siemens)
-
-Modèle du capteur de gaz : I=V(cp,cn)*(10n+(v(gc,gn)*10n))
-
-t=0: V(cp,cn)=0 I=V(cp,cn)*(10nS)
-
-Si t>>1: V(gc,gn)=1 I=V(cp,cn)*(10nS+10mS)
-
-tau=R0*C0
-
-
-Buit 50Hz atténué :
-
-![image](https://github.com/user-attachments/assets/47ac8214-5803-498e-826d-89604c378637)
-
-
-Bruit 50Hz non atténué :
-
-![image](https://github.com/user-attachments/assets/d9d5dcb4-6dd2-47ee-af71-6a9b266228d3)
-
-
-## Calcul de la résistance totale du schéma :
-
-On est a basse fréquence donc les capacités sont analogues à des circuits ouverts, on a alors une succéssion de ponts diviseurs :
-
-
-Rsortie = (1+R3/R)*R1*Vcc/Vadc - R1 - R5
-
-
-
-
-On peut brancher un potentiomètre numérique pour faire varier l'amplification et éviter de saturer dynamiquement.
-
-
-
-
-
+Using the [AppInventor](https://ai2.appinventor.mit.edu/) we have designed a mobile application that can directly communicate with a bluetooth receiver and power on a LED. You can see the application from the files as well as the source file for the embedded part.
