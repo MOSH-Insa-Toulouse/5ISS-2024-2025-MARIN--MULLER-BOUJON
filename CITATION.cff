@@ -1,0 +1,19 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Gaz Sensor PTP ISS
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Yohan
+    family-names: Boujon
+    affiliation: INSA Toulouse
+    orcid: 'https://orcid.org/0009-0003-9562-3007'
+  - given-names: Robin
+    family-names: Marin-Muller
+    affiliation: INSA Toulouse
+repository-code: 'https://github.com/Lemonochrme/gaz-sensor-ptp-iss'
+abstract: INSA Toulouse Smart Device
