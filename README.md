@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/87d17a00-2ed2-4a30-bd89-fa4f3c6e3dcb)# UF Smart Devices
-
 ## Embedded
 
 ![banner](img/software-banner.jpg)
